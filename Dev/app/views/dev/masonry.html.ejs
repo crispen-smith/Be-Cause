@@ -1,0 +1,103 @@
+<!doctype HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="/Resources/Stylesheets/reset.css" />
+	<link rel="stylesheet" href="/Resources/Stylesheets/masonry_test.css" /> 
+</head>
+<body>
+	<article id="container">
+		<div class="msn_test red col2 story3"><span class="blue">1</span></div>
+    <section>
+	  <div class="msn_test blue col1"><span class="blue">2</span></div>
+	  <div class="msn_test green col1"><span class="blue">3</span></div>	
+	  <div class="msn_test lt_green col1 story2"><span class="blue">4</span></div>
+    <div class="msn_test lt_red col1 story3point5"><span class="blue">5</span></div>
+        <div class="msn_test lt_blue col1 story1padded"><span class="blue">6</span></div> 
+    <div class="msn_test mauve col2"><span class="blue">7</span></div>
+    <div class="msn_test lt_mauve col2"><span class="blue">8</span></div>
+    </section>
+    <aside>
+    <div class="msn_test lt_yellow col1"><span class="blue">9</span></div>
+    <div class="msn_test yellow col1"><span class="blue">10</span></div>
+    <div class="msn_test teal col1"><span class="blue"><span class="blue">11</span></span></div>
+    </aside>
+    <div class="msn_test lt_teal col3"><span class="blue">12</span></div>
+    <div class="msn_test red col1"><span class="blue">13</span>
+    <div class = "wrapper">
+    <p>Bacon ipsum dolor sit amet rump tail bresaola tenderloin ground round, turkey swine. Shank beef ribs brisket venison, pancetta flank pork belly ribeye tongue turducken. Sirloin ball tip shank shoulder, boudin andouille tongue cow drumstick shankle bacon corned beef ham filet mignon turkey. Kielbasa sausage pastrami filet mignon spare ribs, beef doner pork belly andouille chicken rump meatball shoulder short ribs ham.</p>
+    <p>Turducken flank chuck jowl filet mignon boudin t-bone pig kielbasa. Beef strip steak turkey flank beef ribs chicken. Kielbasa leberkas meatloaf salami shoulder. Bresaola frankfurter boudin ham hock, beef kielbasa flank tenderloin tongue pig andouille pork</p>
+    </div> 
+    </div>
+    <div class="msn_test blue col2"><span class="blue">14</span></div>
+    <div class="msn_test green col2"><span class="blue">15</span></div>  
+    <div class="msn_test lt_green col2"><span class="blue">16</span></div>
+    <div class="msn_test lt_red col2"><span class="blue">17</span></div>
+    <div class="msn_test lt_blue col1 story4"><span class="blue">18</span></div> 
+    <div class="msn_test mauve col1"><span class="blue">19</span></div>
+    <div class="msn_test lt_mauve col1"><span class="blue">20</span></div>
+    <div class="msn_test lt_yellow col1 story2"><span class="blue">21</span></div>
+    <div class="msn_test yellow col2"><span class="blue">22</span></div>
+    <div class="msn_test teal col2"><span class="blue">23</span></div>
+    <div class="msn_test lt_teal col2 story2"><span class="blue">24</span></div>
+   <aside>
+   	<div class="msn_test col1 lt_blue">
+   		<span class="blue">25</span>
+   		<p></p>
+   	</div>
+   	<div class="msn_test col1 teal">
+   		<span class="blue">26</span>
+   		<p>T-bone capicola short ribs jowl. Shankle ground round tongue tail leberkas pork loin. Venison frankfurter meatloaf pig short loin, chicken swine flank leberkas pastrami cow corned beef boudin jowl. Shoulder beef ribs tongue beef jerky fatback, venison chicken ground round sirloin boudin tenderloin shank sausage biltong. Strip steak ribeye sirloin ham hock. Biltong bresaola short ribs shoulder. Hamburger flank beef ribs, salami swine shank pork chop ribeye.</p>
+   	</div>
+   	<div class="msn_test col1 story2 lt_blue">
+   		<span class="blue">27</span>
+   		<p></p>
+   	</div>
+   	<div class="msn_test col1 lt_blue">
+   		<span class="blue">28</span>
+   		<p></p>
+   	</div>
+   	<div class="msn_test col1 lt_blue story2">
+   		<span class="blue">29</span>
+   		<p></p>
+   	</div>
+   	<div class="msn_test col1 lt_blue">
+   		<span class="blue">30</span>
+   		<p></p>
+   	</div>
+   	<div class="msn_test col1 lt_blue">
+   		<span class="blue">31</span>
+   		<p></p>
+   	</div>
+   	<div class="msn_test col1 lt_blue">
+   		<span class="blue">32</span>
+   		<p></p>
+   	</div>
+   	<div class="msn_test col1 lt_blue story3">
+   		<span class="blue">33</span>
+   		<p></p>
+   	</div>
+   	<div class="msn_test col1 lt_blue story2">
+   		<span class="blue">34</span>
+   		<p></p>
+   	</div>
+   </aside>
+	</article>
+	<!-- JavasSript - Get Jquery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='Resources/Scripts/jquery-1.9.1.min.js'>\x3C/script>")</script>
+<script src="Resources/Scripts/masonry.min.js"></script>
+<script>
+$(function(){
+	  $('#container').masonry({
+	    // options
+	    itemSelector : '.msn_test',
+	    columnWidth : function(containerWidth) {
+	    	return (containerWidth / 3)-16;
+	    },
+	    gutterWidth: 16,
+	    conatinerStyle: {position: 'relative'}
+	  });
+	});
+</script>
+</body>	
+</html>

@@ -1,0 +1,140 @@
+/* _structure.scss  provides structural elements for layout. */
+  
+html {
+	background-color:  mix($bg_dark, white);
+  height: 99%; 
+  font:  {
+    size: 16px;
+  }
+}
+
+body {
+  height: 100%;
+}
+
+
+.navbar, .landing, main {
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: $bg_dark;
+ position: absolute;
+	top: 17.05rem;
+	padding: .25rem .125rem;;
+	left: 0;
+	right: 0;
+	
+	font-size: 0.1px;
+	text-align: justify;
+
+  width: 100%;
+  
+	&:after {
+		display: inline-block;
+  	width: 100%;
+    content: ''; }
+
+	& li {
+		margin: 0;
+		paddign: 0;
+		display: inline-block;
+   list-style: none;
+
+    & a {
+    	@extend %titleFont;
+    	text-decoration: none;
+    	color: rgba(0,0,0, .4);
+    	transition: all .25s;
+    border-radius: 3%;
+    font: {
+      size: 1.5rem;
+      weight: 800;     }
+    padding: .125rem 2rem; 
+    background-color: $option;
+    @include textShadow($option, 0px, 0px, 0px);
+    @include applyNarrowerThan($king) {
+    	
+    	margin-top: 1rem;
+    	margin-bottom: 1rem;
+    	position: relative;
+    }
+
+    &:hover {
+      color: rgba(0,0,0, .6); 
+      @include textShadow(mix($option, black, 90%), 1px, 2px, 1px);
+      background-color: mix($option, white, 80%);} 
+    }}
+}
+
+.landing {
+	position: absolute;
+	
+	height: 17rem;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background-color: $bg_dark;
+	padding: 5rem 2rem .5rem 2rem;
+  overflow: hidden;
+	& h1, & h2, & img {
+    display: block;
+    color: white;
+    margin: .5rem auto;
+    padding: 0;
+    }
+    
+  &:before {
+  @extend %icon; 
+  content: "Globe";
+  font-size: 24rem;
+  position: absolute;
+  color: rbga(255,255,255,.1);
+  top: -3rem; 
+  left: -6rem;
+   @include textShadow($option, 3px, 3px, 12px);
+   }}
+  
+
+main {
+	border: .125rem $bg_dark solid;
+	border-top-width: .5rem;
+	background-color: $bg_dark;
+	border-bottom-width: .5rem;
+	position: absolute;
+	top: 19.6rem;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 2rem;
+	padding-top: 1rem;
+	overflow: hidden;
+	@include applyNarrowerThan($king) {
+	top: 23.6rem;
+	}
+}
+
+section {
+	background-color: $option;
+  padding: 2rem;
+  margin-top: 2rem;
+  height: 110%;
+  overflow: auto;
+ 
+	 & header {
+  	height: 100%;
+  	width: 15rem;
+  	float: left;
+  	position: relative;
+  	text-align: center;
+   & h1 {
+	   margin-bottom: .25rem; }
+	   
+	 & h2 {
+	 margin-top: .25rem;
+	 font-size: 2rem; }
+
+  @extend %vertSeamAfter; }
+  
+}

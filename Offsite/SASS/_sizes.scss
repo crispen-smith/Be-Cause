@@ -1,0 +1,113 @@
+// Sizes for Media Queries, using @chriscoyier's named media queries approach.
+// Dummy values only!
+// Test and Update
+
+$pawn: 400px;
+$rook: 500px;
+$knight: 600px;
+$bishop: 800px;
+$queen: 1000px;
+$king: 1250px;
+
+$whole: 100%;
+$half: 50%;
+$oneThird: 33%;
+$twoThirds: 66%;
+$oneQuarter: 25%;
+$threeQuarters: 75%;
+$oneFifth: 20%;
+$twoFifths: 40%;
+$threeFifths: 60%;
+$fourFifths: 80%;
+$oneSixth: 16.66%;
+$fiveSixths: 83.3%; /* Note that 2/6 = 1/3, 3/6 = 1/2, 4/6 = 2/3 and 6/6 = 1. */ 
+$oneSeventh: 14.28%;
+$twoSevenths: 28.56; 
+$threeSevenths: 42.84%;
+$fourSevenths: 57.12%;
+$fiveSevenths: 71.4%;
+$sixSevenths: 85.68;
+$oneEigth: 12.5%;
+$threeEigths: 37.5%;
+$fiveEigths: 62.5;
+$sevenEigths: 87.5%; /* Note that 2/8 = 1/4, 4/8 = 1/2, 6/8 = 3/4 and 8/8 = 1. */
+$oneNinth: 11.11%;
+$twoNinths: 22.22%;
+$fourNinths: 44.44%;
+$fiveNinths: 55.55%;
+$sevenNinths: 77.77%;
+$eightNinths: 88.88%; /* As this is based on fractions we are not concerning ourselves with the non-integral version of 99/100. */ 
+$oneTenth: 10%;
+$threeTenths: 30%;
+$sevenTenths: 70%;
+$nineTenths: 90%; /* Note that 2/10 = 1/5, 4/10 = 2/5, 5/10 = 1/2, 6/10 = 3/5, 8/10 = 4/5 and 10/10 = 1. */
+$oneEleventh: 9.09%;
+$twoElevenths: 18.18%;
+$threeElevenths: 27.27%;
+$fourElevenths: 36.36%;
+$fiveElevenths: 45.45%;
+$sixElevenths: 54.54%;
+$sevenElevenths: 63.63%;
+$eigthElevenths: 72.72%;
+$nineElevenths: 81.81%;
+$tenElevenths: 90.9%; /* Honestly, this is so close to nineTenths that there's no real value to including it, but it's here for completion. */
+
+$gutter: 1rem;
+$doubleGutter: 2rem;
+$tripleGutter: 3rem;
+$halfGutter: .5rem;
+$quarterGutter: .25rem;
+
+$oneAndaHalfGutter: ($gutter + $halfGutter);
+$oneAndaQuarterGutter: ($gutter + $quarterGutter);
+$threeQuarterGutter: ($halfGutter + $quarterGutter);
+
+
+/* Ratios */
+$fiveFour: '5/4';
+$fourThree: '4/3';
+$threeTwo: '3/2';
+$fifteenNine: '15/9';
+$sixteenTen: '16/10';
+$sixteenNine: '16/9';
+
+$fourFive: '4/5';
+$threeFour: '3/4';
+$twoThree: '2/3';
+$nineFifteen: '9/15';
+$nineSixteen: '9/16';
+$tenSixteen: '10/16';
+
+// width break;  recieves @content and pipes it into a  @media (min-width = ) style format.
+@mixin applyNarrowerThan($width) {
+  @media(max-width: $width) { @content; }
+}
+
+@mixin applyBetweenWidths($minWidth, $maxWidth) {
+  @media(min-width: $minWidth) and (max-width: $maxWidth) { @content; }
+}
+
+@mixin applyWiderThan($width) {
+  @media(min-width: $width) { @content; }
+}
+
+
+// height break;  recieves @content and pipes it into a  @media (min-height = ) style format.
+@mixin applyTallerThan($height) {
+ @media(min-height: $height) { @content; }
+}
+
+
+@mixin applyShorterThan($height) {
+  @media(max-height: $height) { @content;}
+}
+
+@mixin applyBetweenHeights($minHeight, $maxHeight) {
+  @media(min-height: $minHeight) and (max-height: $maxHeight) { @content;}
+}
+
+//Ratio Breaks; useful for elements that are calculated in realtime and have a specific relationship with their aspect ratio.
+
+@mixin applyWhenScreenIs($ratio) {
+  @media(device-aspect: ratio) { @content; }
+}

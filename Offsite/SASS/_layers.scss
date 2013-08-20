@@ -1,0 +1,10 @@
+// Z-index to avoid magic numbers.  
+// Each of these numbers selected as they can be *.5 without collision with the lower number.
+// Allowing for z-index: $front/2 laying halfway between front and midFront.
+// In effect allowing the layers to easily unfold from 5 to 10 should the need arise.
+// NB:  Under normal circumstances the need for 10 layers within a single stacking order should not exist.
+$front: 200;
+$midfront: 90;
+$mid: 40;
+$midBack: 10;
+$back: 1;

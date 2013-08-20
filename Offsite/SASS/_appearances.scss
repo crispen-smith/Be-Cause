@@ -1,0 +1,17 @@
+/* _appearances.scss, provides styling for classes. */
+
+
+.callout {
+  color: mix($option, black, 80%);
+  font-size: 110%;
+  
+}
+
+.landing .callout {
+  color: $option;
+  @include textShadow(mix($option, black));
+}
+
+.icon {
+  @extend %icon;
+}

@@ -1,0 +1,58 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500|Nobile);
+
+@font-face {
+  font-family: 'because_icons';
+  src:  url('../fonts/be_cause.eot');
+  src:  url('../fonts/be_cause.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/be_cause.woff') format('woff'),
+        url('../fonts/be_cause.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+%icon { 
+  font-family: because_icons;
+  font-feature-settings:"liga","dlig";
+  text-rendering:optimizeLegibility;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  
+}
+
+
+%bodyFont {
+  font-family: 'Nobile', sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+%titleFont {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+  
+  
+  
+  // Includes 
+  // Variables (layers and mq/bp sizes)
+  @import "layers";
+  @import "sizes";
+  @import "colours";
+  @import "struts";
+//  @import "reset";  /*Updated to include setting body and * text to font-family: opens sans */ 
+//  @import "reset_final";
+  @import "normalize"; // New as of V0.0.3 of Basemint's SCSS module, moving from reset to normalize. This feature is *Very* experimental.
+  @import "structure";
+  @import "appearances";
+  @import "shame";
+  

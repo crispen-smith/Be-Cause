@@ -1,0 +1,140 @@
+// Mixins/Placeholders for Seams, Struts and other visual elements.
+
+// Global Seam base.   
+@mixin seam() {
+   opacity: .1;
+   position: absolute;
+   content: '';
+}
+
+// Vertical Seam specifications
+@mixin vertSeam() {
+  @include seam();
+  width: 0;
+  height: 100%;
+  top: 0;
+  border: {
+   top: none;
+   bottom: none;
+  }
+}
+
+// Horizontal Seam specifications
+@mixin horzSeam() {
+  @include seam();
+  width: 100%;
+  height: 0;
+  left: 0;
+  border: {
+   top: none;
+   bottom: none;
+  }
+}
+
+
+// placeholder for vertical seam on the before psuedo.
+// @extend vertSeamBefore should be called from within the main class body, not on the &:before child.
+
+%vertSeamBefore {
+  &:before {
+    @include vertSeam();
+    left: -2px;
+    border: {
+      left: 2px solid black;
+      right: 2px solid white;
+    }
+  }
+}
+
+
+// placeholder for vertical seam on the after psuedo.
+// @extend vertSeamBefore should be called from within the main class body, not on the &:after child.
+
+%vertSeamAfter {
+  &:after {
+    @include vertSeam();
+    left: 100%;
+    border: {
+      left: 2px solid white;
+      right: 2px solid black;
+    }
+  }
+}
+
+// placeholder for horizontal seam on the before pseudo.
+// @extend vertSeamBefore should be called from within the main class body, not on the &:before child.
+
+%horzSeamBefore {
+&:before {
+    @include horzSeam();
+    top: 0;
+    border: {
+      top: 3px solid black;
+      bottom: 3px solid white;
+    }
+  }
+}
+
+// placeholder for horizontal seam on the after pseudo
+// @extend vertSeamBefore should be called from within the main class body, not on the &:after child.
+
+%horzSeamAfter {
+&:after {
+    @include horzSeam();
+    top: 100%;
+    border: {
+      top: 2px solid white;
+      bottom: 2px solid black;
+    }
+  }
+}
+
+
+
+// The strut placeholder provides a branded corner strut for ribbons or signposts.
+// This needs some work still for flex and for Responsiveness, it's currently  fixed size and 
+// both sides.
+
+%strut {
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border: {
+      style: solid;
+      color: transparent transparent #a68260 transparent; }
+    top: -.75em;
+  }
+  &:before {
+    left: 2.5%;
+    border-width: 0 0 .5em .65em;
+  }
+  &:after {
+   right: 2.5%;
+   border-width: 0 .6em .5em 0;
+  }
+}
+
+
+%taperBorderHorz {
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  
+}
+
+%taperBorderVer {
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  
+}
+
+@mixin shadow($color, $mode: 0, $offsetX: 2px, $offsetY: 3px, $blur: 0px) {
+  box-shadow: $mode $offsetX $offsetY $blur $color;
+}
+
+@mixin textShadow($color, $offsetX: 1px, $offsetY: 1px, $blur: 1px) {
+  text-shadow: $offsetX $offsetY $blur $color;
+}
+
+
+
