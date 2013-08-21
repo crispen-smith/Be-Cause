@@ -43,7 +43,7 @@ section header:after {
   border-left: 2px solid white;
   border-right: 2px solid black; }
 
-/* normalize.css v2.1.2 | MIT License | git.io/normalize */
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -401,13 +401,26 @@ body {
     display: inline-block;
     width: 100%;
     content: ''; }
+  @media (min-width: 1250px) and (max-width: 1500px) {
+    .navbar {
+      padding: .5rem .125rem .4rem .125rem; } }
+  @media (max-width: 1250px) {
+    .navbar {
+      top: 17.05rem; } }
+  @media (max-width: 800px) {
+    .navbar {
+      top: 15.55rem; } }
   .navbar li {
     margin: 0;
     paddign: 0;
     display: inline-block;
     list-style: none; }
+    @media (max-width: 800px) {
+      .navbar li:nth-child-of-type(n+4) {
+        margin-top: 10rem; } }
     .navbar li a {
       text-decoration: none;
+      position: relative;
       color: rgba(0, 0, 0, 0.4);
       transition: all .25s;
       border-radius: 3%;
@@ -416,11 +429,16 @@ body {
       padding: .125rem 2rem;
       background-color: #99edc5;
       text-shadow: 0px 0px 0px #99edc5; }
-      @media (max-width: 1250px) {
+      @media (min-width: 800px) and (max-width: 1250px) {
         .navbar li a {
+          font-size: 1.25rem;
+          padding: 0rem .6rem;
           margin-top: 1rem;
-          margin-bottom: 1rem;
-          position: relative; } }
+          margin-bottom: 1rem; } }
+      @media (min-width: 1250px) and (max-width: 1500px) {
+        .navbar li a {
+          font-size: 1.25rem;
+          padding: 0.2rem 1rem; } }
       .navbar li a:hover {
         color: rgba(0, 0, 0, 0.6);
         text-shadow: 1px 2px 1px #89d5b1;
@@ -436,11 +454,24 @@ body {
   background-color: #333333;
   padding: 5rem 2rem .5rem 2rem;
   overflow: hidden; }
+  @media (max-width: 800px) {
+    .landing {
+      padding-top: 2rem;
+      height: 15.5rem; } }
+  @media (min-width: 800px) and (max-width: 1250px) {
+    .landing {
+      height: 17rem; } }
   .landing h1, .landing h2, .landing img {
     display: block;
     color: white;
     margin: .5rem auto;
     padding: 0; }
+  @media (max-width: 1250px) {
+    .landing h2 {
+      font-size: 1.3rem; } }
+  @media (max-width: 800px) {
+    .landing h2 {
+      max-width: 60%; } }
   .landing:before {
     content: "Globe";
     font-size: 24rem;
@@ -449,6 +480,15 @@ body {
     top: -3rem;
     left: -6rem;
     text-shadow: 3px 3px 12px #99edc5; }
+    @media (min-width: 1250px) and (max-width: 1500px) {
+      .landing:before {
+        font-size: 22rem;
+        left: -8rem; } }
+    @media (max-width: 1250px) {
+      .landing:before {
+        font-size: 20rem;
+        top: -2rem;
+        left: -11rem; } }
 
 main {
   border: 0.125rem #333333 solid;
@@ -463,15 +503,18 @@ main {
   padding: 2rem;
   padding-top: 1rem;
   overflow: hidden; }
+  @media (min-width: 1250px) and (max-width: 1500px) {
+    main {
+      top: 19.6rem; } }
   @media (max-width: 1250px) {
     main {
-      top: 23.6rem; } }
+      top: 19.25rem; } }
 
 section {
   background-color: #99edc5;
   padding: 2rem;
-  margin-top: 2rem;
-  height: 110%;
+  margin-top: 1rem;
+  height: 120%;
   overflow: auto; }
   section header {
     height: 100%;

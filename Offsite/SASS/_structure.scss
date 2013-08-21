@@ -35,17 +35,37 @@ body {
   	width: 100%;
     content: ''; }
 
+   @include applyBetweenWidths($king, $beekeeper) {
+    padding: .5rem .125rem .4rem .125rem;
+   }
+
+
+	@include applyNarrowerThan($king) {
+	 top: 17.05rem; }
+	 
+ @include applyNarrowerThan($bishop) {
+  top: 15.55rem; }
+
+
 	& li {
 		margin: 0;
 		paddign: 0;
 		display: inline-block;
    list-style: none;
-
+    @include applyNarrowerThan($bishop) {
+    &:nth-child-of-type(n+4) {
+      margin-top: 10rem;
+    }}
     & a {
     	@extend %titleFont;
     	text-decoration: none;
+ 
+    	position: relative;
+ 
     	color: rgba(0,0,0, .4);
+ 
     	transition: all .25s;
+ 
     border-radius: 3%;
     font: {
       size: 1.5rem;
@@ -53,11 +73,20 @@ body {
     padding: .125rem 2rem; 
     background-color: $option;
     @include textShadow($option, 0px, 0px, 0px);
-    @include applyNarrowerThan($king) {
-    	
+    @include applyBetweenWidths($bishop, $king) {
+      font-size: 1.25rem;
+      padding: 0rem .6rem;
     	margin-top: 1rem;
     	margin-bottom: 1rem;
-    	position: relative;
+    }
+    
+    @include applyBetweenWidths($king, $beekeeper) {
+      font-size: 1.25rem;
+      padding: 0.2rem 1rem;
+    
+    }
+    @include applyNarrowerThan($queen) {
+    
     }
 
     &:hover {
@@ -78,12 +107,26 @@ body {
 	background-color: $bg_dark;
 	padding: 5rem 2rem .5rem 2rem;
   overflow: hidden;
+	@include applyNarrowerThan($bishop) {
+		padding-top: 2rem;
+		height: 15.5rem;}
+		
+	@include applyBetweenWidths($bishop, $king) {
+	height: 17rem; }
+	
 	& h1, & h2, & img {
     display: block;
     color: white;
     margin: .5rem auto;
     padding: 0;
     }
+    
+    & h2 {
+     @include applyNarrowerThan($king) {
+       font-size: 1.3rem;    }
+       
+     @include applyNarrowerThan($bishop) {
+      max-width: 60%; }}
     
   &:before {
   @extend %icon; 
@@ -94,7 +137,15 @@ body {
   top: -3rem; 
   left: -6rem;
    @include textShadow($option, 3px, 3px, 12px);
-   }}
+   
+   @include applyBetweenWidths($king, $beekeeper) { 
+    font-size: 22rem;
+    left: -8rem;
+   }
+   @include applyNarrowerThan($king) {
+    font-size: 20rem;
+    top: -2rem;
+    left: -11rem; }}}
   
 
 main {
@@ -110,16 +161,20 @@ main {
 	padding: 2rem;
 	padding-top: 1rem;
 	overflow: hidden;
+  @include applyBetweenWidths($king, $beekeeper) {
+    top: 19.6rem;
+  }
+	
 	@include applyNarrowerThan($king) {
-	top: 23.6rem;
+	 top: 19.25rem;
 	}
 }
 
 section {
 	background-color: $option;
   padding: 2rem;
-  margin-top: 2rem;
-  height: 110%;
+  margin-top: 1rem;
+  height: 120%;
   overflow: auto;
  
 	 & header {
