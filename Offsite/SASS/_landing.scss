@@ -1,0 +1,48 @@
+.landing {
+  
+  height: 13rem;
+  width: 100%;
+  position: relative;
+  text-align: center;
+
+  padding: 1rem 2rem .5rem 2rem;
+  overflow: hidden;
+
+   
+  
+  & h1, & h2, & img {
+    display: block;
+    color: white;
+    margin: .5rem auto; 
+    padding: 0;
+    }
+    
+    & h2 {
+     @include applyNarrowerThan($king) {
+       font-size: 1.1rem; 
+       max-width: 75%   }
+       
+     @include applyNarrowerThan($bishop) {
+     	font-size: 1rem;
+      max-width: 60%; }}
+    
+  &:before { /*Globe watermark */
+  @extend %icon; 
+  content: "Globe";
+  font-size: 24rem;
+  position: absolute;
+  color: rbga(255,255,255,.1);
+  top: -3rem; 
+  left: -6rem;
+   @include textShadow($option, 3px, 3px, 12px);
+   
+   @include applyNarrowerThan($king) { 
+    font-size: 22rem;
+    left: -8rem;
+   }
+   @include applyNarrowerThan($king) {
+    font-size: 20rem;
+    top: -2rem;
+    left: -11rem; }}}
+  
+
