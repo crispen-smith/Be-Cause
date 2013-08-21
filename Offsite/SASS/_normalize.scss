@@ -1,8 +1,38 @@
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 
+
+/*===========================================================================
+CUSTOM - Declarations for current project branding HTML and Body tags
+   ========================================================================== */
+
+html {
+	@extend %bodyFont;
+
+  background-color:  $bg_dark;
+  height: 99%; 
+  font:  {
+    size: 16px;   }
+  
+  @include applyNarrowerThan($bishop) {
+    font: {
+    size: 14px; }}
+}
+
+body {
+  height: 100%;
+  margin: 0; /* Moved here to clean up from original Normalize. */
+}
+
+
+.navbar, .landing, main, footer {
+  box-sizing: border-box;
+}
+
+
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
+
 
 /**
  * Correct `block` display not defined in IE 8/9.
@@ -62,7 +92,6 @@ audio:not([controls]) {
  */
 
 html {
-    font-family: sans-serif; /* 1 */
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -71,9 +100,6 @@ html {
  * Remove default margin.
  */
 
-body {
-    margin: 0;
-}
 
 /* ==========================================================================
    Links

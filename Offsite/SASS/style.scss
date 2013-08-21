@@ -49,10 +49,13 @@
   @import "sizes";
   @import "colours";
   @import "struts";
-//  @import "reset";  /*Updated to include setting body and * text to font-family: opens sans */ 
-//  @import "reset_final";
+/*  @import "reset";  Updated to include setting body and * text to font-family: opens sans */ 
+/*  @import "reset_final";  With reset removed there's no need for reset final. */
   @import "normalize"; // New as of V0.0.3 of Basemint's SCSS module, moving from reset to normalize. This feature is *Very* experimental.
-  @import "structure";
+  @import "structure";  /* Miscelaneous sctructural pieces with no major impact or logic */
+  @import "navbar";
+  @import "main";
+  @import "landing";
   @import "appearances";
   @import "shame";
   
