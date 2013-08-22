@@ -4,36 +4,46 @@
   /*Key Definition:  A justify aligned grid on anything wider than palm.  A hidden (icon summoned) top bar on palm */ 
   
   /*Define the palm perspective as default to allow for less work on palm CPUs */ 
-  
-  
-  /*Define the >palm perspective */
-
-  @include applyWiderThan($knight);
+  @include applyNarrowerThan($rook){
+	  position: absolute;
+	  z-index: $midfront;
+	  left: 0;
+	  right: 0;
+	  background-color: $bg_dark;
+	  transition: all 1s ease-out; 
+	  top: 4rem; 
+	  overflow-y: scroll;
+	  padding: 1rem 0; 
+	  }
+	  
+	  /*Define the >palm perspective */
+	  &.closed {
+	   @include applyNarrowerThan($rook) {
+	     top: -26rem;
+	   } }
+	  
+  @include applyWiderThan($knight) {
+  display: block;
   width: 100%;
   font-size: 0.1px;
   text-align: justify;
-  padding: .6rem .125rem;;
+  padding: .9rem 2rem .8rem 2rem;
   &:after { /* Used to create the Justify grid */
     display: inline-block;
     width: 100%;
     content: '';  }
 
   /* Borders */
-  border: 2px mix($bg_dark, white, 80%) solid; 
+  border: 3px mix($bg_dark, white, 80%) double; 
     border-left: none;
    border-right: none;
-   
-   //Micro-adjustments for screen variations.
-
-  
-   @include applyWiderThan($king) { 
-    padding: .5rem .125rem .4rem .125rem;
    }
    
-   @include applyWiderThan($beekeeper) {
-    padding: .6rem .125rem;;
-   }
-
+   @include applyWiderThan($queen) {
+    padding-top:  .8rem;
+    padding-right:  2rem;
+    padding-bottom: .8rem;
+    padding-left: -2rem;  }
 }
 
   .navItem {  /* individual List Items are *only* Containers for buttons.
@@ -48,44 +58,93 @@
 .navItem a {  /* navItem Anchors are buttons. */
   /*key definition */
   position: relative;
+  
+  @include applyNarrowerThan($rook) {
+    display: block;  
+    margin: 0 .5rem; 
+    padding-top: .375rem;
+    padding-bottom: .375rem; }
+
+  /* Soap Bar Base */
   background-color: $option;
+  border: 2px solid mix($option, black, 20%);
+  border-top-color:  mix($option, white, 80%);
+  border-left: none;
+  border-right: none;
   border-radius: 3%;
  
-  /*default padding for most settings, good width and height */
+  /* Provide Soap Bar text */
+  color: rgba(0,0,0, .4);
   line-height: 1rem;
   @extend %titleFont; /* Grab font-face and a few other key definitions */
   font-weight: 800;  /* Override GLOBAL weight for the buttons, font-size handled in MQs */
+  font-size: 1.25rem;
+ 
+  /*default padding for most settings, good width and height */
+  padding: .25rem .5rem;
+  text-align: center;
+
   
 
   text-decoration: none;
   @include textShadow($option, 0px, 0px, 0px); /* Invisible text-shadow makes the transition sexier. */
 
 
-  /* Provide Soap Bar text */
-  color: rgba(0,0,0, .4);
   transition: all .25s;
 
-  &:hover { /* Define the hover state: raised text and a slightly lighter bg */
+  &:hover, &:active { /* Define the hover state: raised text and a slightly lighter bg */
     color: rgba(0,0,0, .6); 
     @include textShadow(mix($option, black, 90%), 1px, 2px, 1px);
     background-color: mix($option, white, 80%);} 
 
-
   @include applyWiderThan($knight) {
     font-size: .9rem; 
-    padding: .3rem .2rem; }
+    padding: .5rem .3rem; }
 
   @include applyWiderThan($bishop) {
   	font-size: 1.25rem;
-    padding: 0 .4rem;
+    padding: .3rem .4rem;
     margin-top: 1rem;
     margin-bottom: 1rem; }
   
-  @include applyWiderThan($king) {
+  @include applyWiderThan($queen) {
     font-size: 1.25rem;
     padding: 0.2rem 1rem; }
   
   @include applyWiderThan($beekeeper) {
     padding: .125rem 2rem; }
+}
+
+#menuButton {
+	@extend %icon;
+	font-size: 1.25rem;
+	z-index: $front;
+	text-decoration: none;
+	color: rgba(0, 0, 0, .3);
+	position: absolute;
+	bottom: 3.9rem;
+	left: 50%;
+	margin-left: -1.5rem;
+	width: 3rem;
+	text-align: center;
+	height: 2rem;
+	padding-top: .25rem;
+	
+	background-color: $option;
+	border-radius: 25% 25% 0% 0%;
+	border-top: 2px solid mix($option, black, 80%);
+/*	border-bottom: 2px solid mix($option, black, 20%); */
+
+   @include textShadow(mix($option, black, 90%), 0, 0, 0);
+
+	
+  &:hover, &:active { /* Define the hover state: raised text and a slightly lighter bg */
+   color: rgba(0,0,0, .6); 
+   @include textShadow(mix($option, black, 90%), 1px, 2px, 1px);
+   background-color: mix($option, white, 80%);} 
+
+
+	@include applyWiderThan($rook) {
+	display: none;}
 }
     

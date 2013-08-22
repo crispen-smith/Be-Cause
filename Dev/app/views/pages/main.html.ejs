@@ -1,423 +1,415 @@
-<% block('data-main', 'main.js'); %> <% layout('../../layouts/layout.ejs') -%>
-<header
-  role="header"
-  class="landing"
-  id="welcome"
->
-  <img
-    src="/Resources/Images/logo.png"
-    alt="Be, Cause.  Be the change you want to see in the world, for a cause you care about."
-    class="logo"
-  />
-  <h1>Be, Cause</h1>
-  <h2>
-    <span class="callout">Be</span>
-    the change you want to see in the world, for a
-    <span class="callout">cause</span>
-    you care about
-  </h2>
+<% block('data-main', 'main.js'); %> <%
+layout('../../layouts/layout.ejs') -%>
+<header role="header" class="landing" id="welcome">
+	<img src="/Resources/Images/logo.png"
+		alt="Be, Cause.  Be the change you want to see in the world, for a cause you care about."
+		class="logo" 
+		id="logo"/>
+	<h1>Be, Cause</h1>
+	<h2>
+		<span class="callout">Be</span> the change you want to see in the
+		world, for a <span class="callout">cause</span> you care about
+	</h2>
 </header>
 <nav role="nav">
-  <ul class="navbar">
-    <
-    <li class="navItem"><a href="#community">Community</a></li> <
-    <li class="navItem"><a href="#promises">Promises</a></li> <
-    <li class="navItem"><a href="#people">People</a></li> <
-    <li class="navItem"><a href="#accountability">Accountability</a></li> <
-    <li class="navItem"><a href="#alternatives">Alternatives</a></li> <
-    <li class="navItem"><a href="#resources">Resources</a></li> <
-    <li class="navItem"><a href="#login">Login</a>
-  </ul>
+	<ul class="navbar closed" id="navBar">
+		<
+		<li class="navItem"><a href="#community" class="navButton">Community</a></li>
+		<
+		<li class="navItem"><a href="#promises" class="navButton">Promises</a></li>
+		<
+		<li class="navItem"><a href="#people" class="navButton">People</a></li>
+		<
+		<li class="navItem"><a href="#accountability" class="navButton">Accountability</a></li>
+		<
+		<li class="navItem"><a href="#alternatives" class="navButton">Alternatives</a></li>
+		<
+		<li class="navItem"><a href="#resources" class="navButton">Resources</a></li>
+		<
+		<li class="navItem"><a href="#login" class="navButton">Login</a>
+	</ul>
 </nav>
-<main>
+<a href="#" id="menuButton">menu</a>
+<main id="contentBox">
 
 <section class="welcome">
-	
-	<div class="message"><span class="callout">Be, Cause</span> is a place where you can become a hero.<br/>Because the world still needs a few more.</div>
+
+	<div class="message">
+		<span class="callout">Be, Cause</span> is a place where you can become
+		a hero.<br />Because the world still needs a few more.
+		<div>
+			<ul>
+				<li class="navItem"><a href="#login">Login</a></li>
+				<li class="navItem"><a href="#register">Register</a></li>
+				<li class="navItem"><a href="/promises/list">Get Involved</a></li>
+			</ul>
+		</div>
+	</div>
 </section>
-<section
-  class="tutorial"
-  id="community"
->
+<section class="tutorial nextLink" id="community" data-next = "promises">
+	<header role="header">
+		<div class="leftBlock">
+			<h1>A Community Focused on Change.</h1>
+			<h2>Like a Laser.</h2>
+		</div>
+	</header>
+	<div class="rightBlock">
+		<div class="intro">
+			<p>Have you ever wanted to give a day to cause you care about?</p>
+			<p>Or, maybe you've got a friend that likes to push themselves
+				and you want to support their passion.</p>
+			<P>
+				<span class="callout">Be, Cause</span> is a community focused on
+				making connections that drive change. We offer a place where you can
+				ask people to support things like:
+			<ul>
+				<li>Your jog to raise funds for your local animal shelter,</li>
+				<li>Your kids jump rope to raise funds for text-books at their school,</li>
+				<li>Or any fund raising challenge you can imagine.</li>
+			</ul>
+			<p>We believe that change starts locally, and a thousand people
+				making local changes can effect change globally.</P>
+		</div>
+	</div>
+</section>
+<section class="tutorial nextLink priorLink" role="region" id="promises" data-next = "people" data-prior = "comunity">
+	<header role="header">
+		<div class="leftBlock">
+			<H1>Promises</H1>
+			<div class="intro">
+				We call our funding initiatives <span class="callout">Promises</span>. A promise is a commitment you make to do something, in order to
+				raise funds and awareness for a <span class="callout">Cause</span>
+				you care about.
+			</div>
+		</div>
+	</header>
+	<div class="rightBlock">
+	<h3>Making a Promise</h3>
+	<p>A promise is made up of 4 steps:
+		<ol class="summary">
+			<li class="promisepart">To begin, you promise to do something that is a personal challenge. We call this
+				the <a class="callout" href="challenge">Challenge</a>
+			</li>
+			<li class="promisepart">The second part of a promise is announcing
+				the <a  href="/cause/" class="callout">cause</a> you will support. We call this part the <a href="Commitment"
+				class="callout">Commitment</a>
+			</li>
+			<li class="promisepart">The Third part of your promise the
+				request for <a href="sponsors" class="callout">Sponsors</a> or <a
+				href="co-promisers" class="callout">Co-Promisers</a>, we call this
+				part the <a href="Promise" class="callout">Drive</a>
+			</li>
+			<li class="promisepart">The fourth, and final part of your
+				promise is getting proof that you've completed your challenge. We
+				call this part the <a href="proof" class="callout">Proof</a>. Once
+				you've provided the proof, one of our specialists will review the
+				proof against the original challenge and fulfill your Commitment.
+			</li>
+		</ol>
+		<div class="expansion">
+			<p>Be, Cause is a crowd-funding site, but it's different than
+				some of our friends out there in the crowd-funding space. While most
+				crowd-funding sites are helping people who make things, Be, Cause is
+				about helping people trying to be something. Specifically, we are
+				about helping people who are trying to be a change for good in the
+				world.</p>
+			<p>Whether you are a charity looking for exposure and funding from our community or a community member looking for a charity to support, we believe
+				that we can help you connect. That is how we are being the change
+				that we want to see.</p>
+			<p>As a member of Be Cause you have the opportunity to champion,
+				co-champion, sponsor or share promises. These promises are a
+				commitment made by the champion, and supported by the co-champions
+				and sponsors, to create a change in the world by funding a cause.</p>
+			<p>When champions create promises they set a date in the future
+				when the challenge will be met. We suggest running the challenge for
+				45-60 days to give champions time to prepare for the challenge and
+				to raise awareness and sponsors for the promise.</p>
+		</div>
+	</div>
+</section>
+<section class="tuturial nextLink priorLink" id="people" data-prior="promises" data-next="accountability">
+	<header role="header">
+		<div class="leftBlock">
+			<h1>People</h1>
+			<div class="intro">
+				The <span class="callout">Be, Cause</span> community contains
+				several different types of people looking to make connections.
+			</div>
+		</div>
+	</header>
+
+	<div class="rightBlock">
+	<h3>We all have a role to play</h3>
+	<p>Members of the Be, Cause community may have one or more roles depending on what they are doing.
+		<dl>
+			<dt>Causes</dt>
+			<dd>Be, Cause requires that Causes be Non-Profit NGOs with the
+				ability to prove their charitable status in the region where they operate. While that's a fairly technical term what it really means is
+				that any real charity could be a good candidate for funding. We just need to see your documentation.</dd>
+			<dt>Sponsors</dt>
+			<dd>For any given Promise a sponsor is a person who has pledged
+				to donate on your behalf, if you complete your challenge. You may be
+				a sponsor on one promise, and a champion on another, which brings us
+				to...</dd>
+			<dt>Champions</dt>
+			<dd>
+				Of course every member of Be, Cause is a champion, but when we say <span
+					class="callout">champion</span> we mean the champion behind a
+				promise. A promise may only have one champion. The Champion is the person
+				who created it and has made the commitment represented by that
+				promise. The champion must complete the challenge for the promise to
+				get sponsored. While a promise may only have champion, it may have
+				many co-champions.
+			</dd>
+			<dt>Co-Champion</dt>
+			<dd>A co-champion is a person who has committed to an existing
+				promise. By co-championing a promise you can bring your connections
+				to that promise and hopefully earn that promise more awareness and
+				more funding.</dd>
+		</dl>
+		<p>
+			Every member of <span class="callout">Be, Cause</span> has the option
+			of <a href="connections" class="callout">connecting</a> with other
+			members of Be, Cause to create a network. When someone is in your
+			network they will receive notifications about all the promises you
+			interact with. These interactions include championing a new promise,
+			co-championing an existing promise, sponsoring an existing promise or
+			sharing a promise. These are the only interactions that get shared
+			with your network, while Be, Cause does leverage the power of a
+			network it is not a social networking tool. We recommend using Be,
+			Cause in conjunction with your social network or blogging platform of
+			choice to maximize your impact.
+		</p>
+	</div>
+</section>
+<section class="tutorial priorLink nextLink" id="accountability" role="region" data-next="alternatives" data-prior="people" >
+	<header role="header">
+		<div class="leftBlock">
+			<h1>Accountability</h1>
+			<div class="intro">Through this community you have the power to
+				ask people to support causes you care about. With that ability
+				comes a responsibility we take very seriously.</div>
+		</div>
+	</header>
+	<div class="rightBlock">
+	<H3>A Reputation for Doing Good</H3>
+		<p>
+			Accountability at Be, Cause is built on a reputation system. This
+			system is very similar to that used by the <a
+				href="http://stackexchange.com/" class="external">Stack Exchange
+				Network</a>
+		</p>
+		<p>In the interest of making it possible for anyone to champion a
+			promise, there is no minimum reputation to sponsor or champion your
+			first promise.</p>
+		<p>
+			Whenever promises are created they are reviewed by our team, we will
+			verify that the promise will help a real charity, that the Challenge
+			is reasonable and can be audited. Whenever a promise you championed
+			passes this review you will gain <span class="pointscore">20 </span>
+			reputation points. If you champion a promise and it fails this step,
+			you will loose <span class="pointscore negative">25</span> reputation
+			points.
+		<p>
+			Whenever promises are completed they are reviewed by our team. We
+			will verify that the challenge was completed, that the results were
+			audited and that the audit supports the fact that the Challenge was
+			completed. Whenever one of your promises passes this stage you will
+			receive <span class="pointscore">25</span> reputation points. If a
+			promise is completed but the challenge is not met, then you will
+			loose <span class="pointscore negative">30</span> reputation points.
+		</p>
+		<p>
+			As a sponsor, when a promise is completed and the challenge review
+			has been met you will be required to honour your sponsorship
+			commitment. When you honour that commitment you will receive <span
+				class="pointscore">10 </span> reputation points. You also receive <span
+				class="pointscore">5 </span> reputation points for sponsoring during
+			the sponsorship drive for a promise. However, if you fail to meet
+			your commitment as a sponsor you will loose <span
+				class="pointscore negative">15</span> reputation points.
+		</p>
+		<p>
+			As a co-champion you can receive <span class="pointscore">15</span>
+			reputation points for joining a promise and <span class="pointscore">20</span>
+			points for completing the challenge. Leaving a promise before it's
+			completed or failing to meet the challenge will cost <span
+				class="pointscore negative">30</span> reputation points.
+		</p>
+		<p>
+			Sharing a promise with your network without getting involved will
+			cause you to gain <span class="pointscore">1</span> reputation point.
+			You cannot loose reputation points through sharing a promise.
+		</p>
+		<p>Causes gain and loose reputation as well. Causes gain 1
+			reputation point whenever anyone champions, co-champions, or sponsors
+			a promise for that cause. Causes loose reputation on a case by case
+			basis, in response to observations brought to the network and after
+			careful review. Causes who suffer enough reputation loss may be
+			blocked from the network for up to 30 days or banned altogether.</p>
+		<p>It is possible to have a negative reputation. Should you earn a
+			negative reputation it is advisable to rebuild your reputation
+			through sponsoring and sharing projects. It is not possible to create
+			a promise while you have a negative reputation.</p>
+		<p>
+			User accounts that reach <span class="pointscore negative">-50</span>
+			reputation points will be blocked for 30 days, further reputation
+			loss may lead to a banning.
+		</p>
+		<p>
+			to create your second or subsequent promise you must have a
+			reputation of at least <span class="pointscore">0</span> reputation
+			points.
+		<p>This reputation system protects everyone and ensures that
+			everything is transparent. It is always quick to see who is being a
+			positive force for change, and who might be trying to abuse the
+			system.</p>
+	</div>
+</section>
+<section class="tutorial nextLink priorLink" id="alternatives" role="region" data-next = "accountability" data-next = "resources">
+	<header role="header">
+		<div class="leftBlock">
+			<h1>Alternatives</h1>
+			<div class="intro">
+				The <span class="callout">Be, Cause</span> network is a great way to
+				help existing charities but, we are very focused on doing this one thing very
+				well. These other resources may offer better approaches for other types of projects.
+			</div>
+		</div>
+	</header>
+	<div class="rightBlock">
+		<dl>
+			<dt>Kickstarter</dt>
+			<dd>
+				<a href="http://www.kickstarter.com/" class="external">Kickstarter.com</a>,
+				with a mandate focused around bringing creativity to life, the fine
+				folks over at Kickstarter have created a huge awareness for
+				crowdfunding for the arts. These site is a fantastic option for
+				creators in the United States of America.
+			</dd>
+			<dt>Indiegogo</dt>
+			<dd>
+				<a href="http://www.indiegogo.com/" class="external">Indiegogo.com</a>
+				bills itself as "the world's funding platform" and while it doesn't
+				have quite the same buzz around it as kickstarter, indiegogo is a
+				fantastic resource for makers from all over the world.
+			</dd>
+			<dt>Flattr</dt>
+			<dd>
+				<a href="http://www.flattr.com" class="external">Flattr.com</a> offers a way
+				for creators to ask for microdonations. Be, Cause owes the people
+				behind flattr an intellectual debt as they were pioneers in this
+				field and if you are a maker, please strongly consider joining their
+				network to ask the world to support your work.
+			</dd>
+			<dt>Wordpress</dt>
+			<dd>
+				<a href="http://www.wordpress.com" class="external">Wordpress.com</a>
+				continues to be a great way to raise awareness through blogging.
+				They offer a very stable platform, an active community and a great
+				set of tools. We strongly suggest using wordpress in conjunction
+				with <span class="callout">Be, Cause</span> in order to document
+				your journey and why you are raising the funds for your cause.
+			</dd>
+		</dl>
+		<p>Please note that Be, Cause has no direct affiliation with any of these sites. 
+	</div>
+</section>
+<section class="tutorial nextLink priorLink" id="resources" role="region" data-next = "login" data-prior = "alternatives">
+	<header role="header">
+		<div class="leftBlock">
+			<h1>Resources</h1>
+			<div class="intro">
+				<p>
+					Ready to learn more about <span class="callout">Be, Cause</span> ?
+				</p>
+				<p>Here's a list of useful resources.</p>
+			</div>
+		</div>
+	</header>
+	<div class="rightBlock">
+		<p>
+			For questions about promises, click <a href="faq/promises"
+				class="callout">here</a>.
+		</p>
+		<p>
+			For questions about the site itself, click <a href="faq/site"
+				class="callout">here.</a>
+		</p>
+		<p>
+			<a href="primers/promises" class="callout">This</a> primer is a great
+			tool when you are ready to make your first promise.
+		<p>
+			We maintain a blog <a href="blog" class="callout">here</a>.
+		</p>
+		<p>
+			Or, you can meet the team <a href="team/" class="callout">here</a>
+		</p>
+	</div>
+</section>
+<section class="form" id="login">
+	<header role="header">
+		<div class="leftBlock">
+			<h1>Login</h1>
+			<h2>Get Involved!</h2>
+		</div>
+	</header>
+   <div class="rightBlock">
+  	<form action="/login">
+<div class="textWidget"><label for="username">User Name:</label>
+  		<input type="text" name="username" id="username" placeholder="USER NAME">
+  		</div>  	
+  		<div class="textWidget">
+  			<label for="password">Password:</label>
+  			  	<input type="password" name="password" id="password" placeholder = "PASSWORD">
+  		</div>
+  	<input type="submit" name="login" value="Log In" class="submitButton">
+  	</form>
+	<div class= "formFoot"><a href="#register">(or Register)</a></div>
+  </div>
+</section>
+
+<section class="form" id="register">
   <header role="header">
     <div class="leftBlock">
-      <h1>A Community Focused on Change.</h1>
-      <h2>Like a Laser.</h2>
+      <h1>Register</h1>
+      <h2>BECOME A HERO</h2>
     </div>
   </header>
   <div class="rightBlock">
-  <div class="intro">
-    <p>Have you ever wanted to give a day to cause you care about? Or,
-      maybe you've got a friend that likes to push themselves and you want to
-      support their passion.</p>
-    <P>
-      <span class="callout">Be, Cause</span>
-      is a community focused on making connections that drive change. We offer
-      a place where you can ask people to support your jog for your local
-      animal shelter, jump rope for text-books or anything you can imagine. We
-      believe that change starts locally, and a thousand people making local
-      changes can effect change globally.
-    </P>
+    <form action="/register">
+     <div class="textWidget">
+     	<label for="username">User Name:</label>
+     	    <input type="text" name="username" id="username" placeholder = "USER NAME">
+     </div>
+    
+     <div class="textWidget"><label for="firstName">First Name:</label>
+     	    <input type="text" name="firstName" id="firstName" placeholder = "FIRST NAME">
+     	  </div>  
+<div class="textWidget">
+     	<label for="lastName">User Name:</label>
+     	    <input type="text" name="lastName" id="lastName" placeholder = "LAST NAME">
+     </div>
+    
+    <div class="textWidget">
+    	<label for="password">Password:</label>
+    	<input type="password" name="password" id="password" placeholder = "PASSWORD">
+    </div>
+    
+    <div class="textWidget">
+    	<label for="confimPassword">Confirm Password:</label>
+    	<input type="confirmPassword" name="confirmPassword" id="confirmPassword" placeholder = "CONFIRM PASSWORD">
+    </div>
+ 
+    <input type="submit" name="register" value="Become A Hero" class = "submitButton"> 
+    </form>
+    
+  <div class="formFoot">
+    Already registered? <a href="#login">Log In</a>
   </div>
+    
   </div>
 </section>
-<section
-  class="tutorial"
-  role="region"
-  id="promises"
->
-  <header role="header">
-    <div class="leftBlock">
-      <H1>Promises</H1>
-      <div class="intro">
-        We call our funding initiatives
-        <span class="callout">Promises</span>
-        . A promise is a commitment you make to do something, in order to raise
-        funds and awareness for a
-        <span class="callout">Cause</span>
-        you care about.
-      </div>
-    </div>
-  </header>
- <div class="rightBlock">
-  	 <ol class="summary">
-  	  <li class="promisepart">The first part of a promise is that you
-  	    promise to do something that is a personal challenge. We call this the <a
-  	    class="callout"
-  	    href="challenge"
-  	  >Challenge</a>
-  	  </li>
-  	  <li class="promisepart">The second part of a promise is choosing a
-  	    cause to support. We call this part the <a
-  	    href="Commitment"
-  	    class="callout"
-  	  >Commitment</a>
-  	  </li>
-  	  <li class="promisepart">The Third part of your promise the request for
-  	    <a
-  	    href="sponsors"
-  	    class="callout"
-  	  >Sponsors</a> or <a
-  	    href="co-promisers"
-  	    class="callout"
-  	  >Co-Promisers</a>, we call this part the <a
-  	    href="Promise"
-  	    class="callout"
-  	  >Drive</a>
-  	  </li>
-  	  <li class="promisepart">The fourth, and final part of your promise is
-  	    getting proof that you've completed your commitment. We call this part
-  	    the <a
-  	    href="proof"
-  	    class="callout"
-  	  >Proof.</a>. Once you've provided the proof, one of our specialists will
-  	    review the proof against the original <span class="callout">Commitment</span>
-  	  </li>
-  	</ol>
-  	<div class="expansion">
-  	  <p>Be, Cause is a crowd-funding site, but it's different than some of
-  	    our friends out there in the crowd-funding space. While most
-  	    crowd-funding sites are helping people who make things, Be, Cause is
-  	    about helping people trying to be something. Specifically, we are about
-  	    helping people who are trying to be a change for good in the world.</p>
-  	  <p>Whether you are a charity looking for exposure, funding, and a
-  	    community or a community member looking for a charity, we believe that we
-  	    can get you connected. That is how we are being the change we want to
-  	    see.</p>
-  	  <p>As a member of Be Cause you have the opportunity to champion,
-  	    co-champion, sponsor or share promises. These promises are a commitment
-  	    made by the champion, and supported by the co-champions and sponsors, to
-  	    create a change in the world by funding a cause.</p>
-  	  <p>When champions create promises they set a date in the future when
-  	    the challenge will be met. We suggest running the challenge for 45-60
-  	    days to give champions time to prepare for the challenge and to raise
-  	    awareness and sponsors for the promise.</p>
-  	</div>
-  </div>
-</section>
-<section
-  class="tuturial"
-  id="people"
->
-  <header role="header">
-    <div class="leftBlock">
-      <h1>People</h1>
-      <div class="intro">
-        The
-        <span class="callout">Be, Cause</span>
-        community contains several different types of people looking to make
-        connections.
-      </div>
-    </div>
-  </header>
 
-    <div class="rightBlock">  <dl>
-      	    <dt>Causes</dt>
-      	    <dd>Be, Cause requires that Causes be Non-Profit NGOs with the ability
-      	to prove their charitable status in the region they operate in. While
-      	that's a fairly technical term what it really means is that any real
-      	charity could be a good candidate for funding.</dd>
-      	    <dt>Sponsors</dt>
-      	    <dd>For any given Promise a sponsor is a person who has pledged to
-      	donate on your behalf, if you complete your challenge. You may be a
-      	sponsor on one promise, an a champion on another, which brings us to...</dd>
-      	    <dt>Champions</dt>
-      	    <dd>
-      	Of course every member of Be, Cause is a champion, but when we say
-      	<span class="callout">champion</span>
-      	we mean the champion behind a promise. A promise may only have one
-      	champion, who is the person that created it and has made the commitment
-      	represented by that promise. The champion must complete the challenge for
-      	the promise to get sponsored. While a promise may only have champion, it
-      	may have many co-champions.
-      	    </dd>
-      	    <dt>Co-Champion</dt>
-      	    <dd>A co-champion is a person who has commited to an existing promise.
-      	By co-championing a promise you can bring your connections to that
-      	promise and hopefully earn that promise more awareness and more funding.</dd>
-      	  </dl>
-      	  <p>
-      	    Every member of
-      	    <span class="callout">Be, Cause</span>
-      	    has the option of <a
-      	href="connections"
-      	class="callout"
-      	    >connecting</a> with other members of Be, Cause to create a network. When
-      	    someone is in your network they will recieve notifications obout all the
-      	    promises you interact with. These interactions are championing a new
-      	    promise, co-championing an existing promise, sponsoring an existing promise
-      	    or sharing a promise. These are the only interactions that get shared with
-      	    your network, while Be, Cause does leverage the power of a network it is
-      	    not a social networking tool. We recommend using Be, Cause in conjunction
-      	    with your social network or blogging platform of choice to maximize your
-      	    impact.
-      	  </p>
-      	</div></section>
-<section
-  class="tutorial"
-  id="accountability"
-  role="region"
->
-  <header role="header">
-    <div class="leftBlock">
-      <h1>Accountability</h1>
-      <div class="intro">Through this community you have the power to ask
-        people to support causes your care about. With that ability comes a
-        responsibility we take very seriously.</div>
-    </div>
-  </header>
-<div class="rightBlock">
-  	<p>
-  	  Accountability at Be, Cause is built on a reputation system. This system is
-  	  very similar to that used by the <a
-  	    href="http://stackexchange.com/"
-  	    class="external"
-  	  >Stack Exchange Network</a>
-  	</p>
-  	<p>In the interest of making it possible for anyone to champion a
-  	  promise, there is no minimum reputation to sponsor or champion your first
-  	  promise.</p>
-  	<p>
-  	  Whenever promises are created they are reviewed by our team, we will verify
-  	  that the promise will help a real charity, that the Challenge is reasonable
-  	  and can be audited. Whenever a promise you championed passes this review
-  	  you will gain
-  	  <span class="pointscore">20 </span>
-  	  reputation points. If you champion a promise and it fails this step, you
-  	  will loose
-  	  <span class="pointscore negative">25</span>
-  	  reputation points.
-  	<p>
-  	  Whenever promises are completed they are reviewed by our team. We will
-  	  verify that the challenge was completed, that the results were audited and
-  	  that the audit supports the fact that the Challenge was completed. Whenever
-  	  one of your promises passes this stage you will receive
-  	  <span class="pointscore">25</span>
-  	  reputation points. If a promise is completed but the challenge is not met,
-  	  then you will loose
-  	  <span class="pointscore negative">30</span>
-  	  reputation points.
-  	</p>
-  	<p>
-  	  As a sponsor, when a promise is completed and the challenge review has been
-  	  met you will be required to honour your sponsorship commitment. When you
-  	  honour that commitment you will receive
-  	  <span class="pointscore">10 </span>
-  	  reputation points. You also receive
-  	  <span class="pointscore">5 </span>
-  	  reputation points for sponsoring during the sponsorship drive for a
-  	  promise. However, if you fail to meet your commitment as a sponsor you will
-  	  loose
-  	  <span class="pointscore negative">15</span>
-  	  reputation points.
-  	</p>
-  	<p>
-  	  As a co-champion you can receive
-  	  <span class="pointscore">15</span>
-  	  reputation points for joining a promise and
-  	  <span class="pointscore">20</span>
-  	  points for completing the challenge. Leaving a promise before it's
-  	  completed or failing to meet the challenge will cost
-  	  <span class="pointscore negative">30</span>
-  	  reputation points.
-  	</p>
-  	<p>
-  	  Sharing a promise with your network without getting involved will cause you
-  	  to gain
-  	  <span class="pointscore">1</span>
-  	  reputation point. You cannot loose reputation points through sharing a
-  	  promise.
-  	</p>
-  	<p>Causes gain and loose reputation as well. Causes gain 1 reputation
-  	  point whenever anyone champions, co-champions, or sponsors a promise for
-  	  that cause. Causes loose reputation on a case by case basis, in response to
-  	  observations brought to the network and after careful review. Causes who
-  	  suffer enough reputation loss may be blocked from the network for up to 30
-  	  days or banned altogether.</p>
-  	<p>It is possible to have a negative reputation. Should you earn a
-  	  negative reputation it is advisable to rebuild your reputation through
-  	  sponsoring and sharing projects. It is not possible to create a promise
-  	  while you have a negative reputation.</p>
-  	<p>
-  	  User accounts that reach
-  	  <span class="pointscore negative">-50</span>
-  	  reputation points will be blocked for 30 days, further reputation loss may
-  	  lead to a banning.
-  	</p>
-  	<p>
-  	  to create your second or subsequent promise you must have a reputation of
-  	  at least
-  	  <span class="pointscore">0</span>
-  	  reputation points.
-  	<p>This reputation system protects everyone and ensures that everything
-  	  is transparent. It is always quick to see who is being a positive force for
-  	  change, and who might be trying to abuse the system.</p>
-  </div>
-</section>
-<section
-  class="tutorial"
-  id="alternatives"
-  role="region"
->
-  <header role="header">
-    <div class="leftBlock">
-      <h1>Alternatives</h1>
-      <div class="intro">
-        The
-        <span class="callout">Be, Cause</span>
-        network is a great way to help existing charities. However, there are
-        other solutions for other projects. We are very focused on doing this
-        one thing very well, and recommend you investigate these other
-        resources who may be able to offer different funding approaches.
-      </div>
-    </div>
-  </header>
-<div class="rightBlock">
-  	<dl>
-  	  <dt>Kickstarter</dt>
-  	  <dd>
-  	    <a
-  	      href="http://www.kickstarter.com/"
-  	      class="external"
-  	    >Kickstarter.com</a>, with a mandate focused around bringing creativity to
-  	    life, the fine folks over at Kickstarter have created a huge awareness
-  	    for crowdfunding for the arts. These site is a fantastic option for
-  	    creators in the United States of America.
-  	  </dd>
-  	  <dt>Indiegogo</dt>
-  	  <dd>
-  	    <a
-  	      href="http://www.indiegogo.com/"
-  	      class="external"
-  	    >Indiegogo.com</a> bills itself as "the world's funding platform" and while
-  	    it doesn't have quite the same buzz around it as kickstarter, indiegogo
-  	    is a fantastic resource for makers from all over the world.
-  	  </dd>
-  	  <dt>Flattr</dt>
-  	  <dd>
-  	    <a
-  	      href="http://www.flattr.com"
-  	      class="external"
-  	    ></a> offers a way for creators to ask for microdonations. Be, Cause owes
-  	    the people behind flattr an intellectual debt as they were pioneers in
-  	    this field and if you are a maker, please strongly consider joining their
-  	    network to ask the world to support your work.
-  	  </dd>
-  	  <dt>Wordpress</dt>
-  	  <dd>
-  	    <a
-  	      href="http://www.wordpress.com"
-  	      class="external"
-  	    >Wordpress.com</a> continues to be a great way to raise awareness through
-  	    blogging. They offer a very stable platform, an active community and a
-  	    great set of tools. We strongly suggest using wordpress in conjunction
-  	    with
-  	    <span class="callout">Be, Cause</span>
-  	    in order to document your journey and why you are raising the funds for
-  	    your cause.
-  	  </dd>
-  	</dl>
-  </div>
-</section>
-<section
-  class="tutorial"
-  id="resources"
-  role="region"
->
-  <header role="header">
-    <div class="leftBlock">
-      <h1>Resources</h1>
-      <div class="intro">
-        Ready to learn more about
-        <span class="callout">Be, Cause</span>
-        ? Here's a list of useful resources.
-      </div>
-    </div>
-  </header>
-<div class="rightBlock">
-  	<p>
-  	  For questions about promises, click <a
-  	    href="faq/promises"
-  	    class="callout"
-  	  >here</a>.
-  	</p>
-  	<p>
-  	  For questions about the site itself, click <a
-  	    href="faq/site"
-  	    class="callout"
-  	  >here.</a>
-  	</p>
-  	<p>
-  	  <a
-  	    href="primers/promises"
-  	    class="callout"
-  	  >This</a> primer is a great tool when you are ready to make your first
-  	  promise.
-  	<p>
-  	  We maintain a blog <a
-  	    href="blog"
-  	    class="callout"
-  	  >here</a>.
-  	</p>
-  	<p>
-  	  Or, you can meet the team <a
-  	    href="team/"
-  	    class="callout"
-  	  >here</a>
-  	</p>
-  </div>
-</section>
-<section
-  clas="tutorial"
-  id="login"
->
-  <header role="header">
-    <div class="leftBlock">
-      <h1>Login (or Register)</h1>
-      <P>Get involved now!</p>
-    </div>
-  </header>
-  <form action="/login"></form>
-</section>
 </main>
-<footer>This site is a concept only.</footer>
+<footer>Today, this site is a only an idea. But who knows what the future might hold.</footer>

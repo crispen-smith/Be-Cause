@@ -6,7 +6,7 @@
   font-weight: normal;
   font-style: normal; }
 
-.landing:before, .icon {
+#menuButton, .landing:before, .icon {
   font-family: because_icons;
   font-feature-settings: "liga","dlig";
   text-rendering: optimizeLegibility;
@@ -24,7 +24,7 @@ html {
   font-weight: 200;
   font-size: 1rem; }
 
-.navItem a, .leftBlock h1, .leftBlock h2, section.welcome .message {
+.navItem a, .leftBlock h1, .leftBlock h2, section.welcome .message, .textWidget label {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -64,7 +64,7 @@ footer:before {
 
 /*  @import "reset";  Updated to include setting body and * text to font-family: opens sans */
 /*  @import "reset_final";  With reset removed there's no need for reset final. */
-/* normalize.css v2.1.2 | MIT License | git.io/normalize */
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /*===========================================================================
 CUSTOM - Declarations for current project branding HTML and Body tags
    ========================================================================== */
@@ -72,7 +72,7 @@ html {
   background-color: #333333;
   height: 99%;
   font-size: 16px; }
-  @media (max-width: 798px) {
+  @media (max-width: 1000px) {
     html {
       font-size: 14px; } }
 
@@ -81,7 +81,7 @@ body {
   margin: 0;
   /* Moved here to clean up from original Normalize. */ }
 
-.navbar, .landing, main, footer {
+.navbar, .landing, main, footer, #menuButton {
   box-sizing: border-box; }
 
 /* ==========================================================================
@@ -418,35 +418,57 @@ footer {
   bottom: 0;
   color: white;
   text-align: center;
-  height: 1.75rem;
-  padding-top: .5rem;
-  font-weight: 800; }
+  height: 4rem;
+  padding-top: 1rem;
+  font-weight: 800;
+  font-size: .9rem; }
+  @media (min-width: 400px) {
+    footer {
+      height: 2rem;
+      padding-top: .75rem; } }
 
 /* Miscelaneous sctructural pieces with no major impact or logic */
 /*Note that minimal nesting is used throughout for maintenance purposes. */
 .navbar {
   /*Key Definition:  A justify aligned grid on anything wider than palm.  A hidden (icon summoned) top bar on palm */
   /*Define the palm perspective as default to allow for less work on palm CPUs */
-  /*Define the >palm perspective */
-  width: 100%;
-  font-size: 0.1px;
-  text-align: justify;
-  padding: .6rem .125rem;
-  /* Borders */
-  border: 2px #5b5b5b solid;
-  border-left: none;
-  border-right: none; }
-  .navbar:after {
-    /* Used to create the Justify grid */
-    display: inline-block;
-    width: 100%;
-    content: ''; }
-  @media (min-width: 1250px) {
+  /*Define the >palm perspective */ }
+  @media (max-width: 500px) {
     .navbar {
-      padding: .5rem .125rem .4rem .125rem; } }
-  @media (min-width: 1500px) {
+      position: absolute;
+      z-index: 90;
+      left: 0;
+      right: 0;
+      background-color: #333333;
+      transition: all 1s ease-out;
+      top: 4rem;
+      overflow-y: scroll;
+      padding: 1rem 0; } }
+  @media (max-width: 500px) {
+    .navbar.closed {
+      top: -26rem; } }
+  @media (min-width: 599px) {
     .navbar {
-      padding: .6rem .125rem; } }
+      display: block;
+      width: 100%;
+      font-size: 0.1px;
+      text-align: justify;
+      padding: .9rem 2rem .8rem 2rem;
+      /* Borders */
+      border: 3px #5b5b5b double;
+      border-left: none;
+      border-right: none; }
+      .navbar:after {
+        /* Used to create the Justify grid */
+        display: inline-block;
+        width: 100%;
+        content: ''; } }
+  @media (min-width: 1000px) {
+    .navbar {
+      padding-top: .8rem;
+      padding-right: 2rem;
+      padding-bottom: .8rem;
+      padding-left: -2rem; } }
 
 .navItem {
   /* individual List Items are *only* Containers for buttons.
@@ -463,20 +485,34 @@ footer {
   /* navItem Anchors are buttons. */
   /*key definition */
   position: relative;
+  /* Soap Bar Base */
   background-color: #99edc5;
+  border: 2px solid #1e2f27;
+  border-top-color: #adf0d0;
+  border-left: none;
+  border-right: none;
   border-radius: 3%;
-  /*default padding for most settings, good width and height */
+  /* Provide Soap Bar text */
+  color: rgba(0, 0, 0, 0.4);
   line-height: 1rem;
   /* Grab font-face and a few other key definitions */
   font-weight: 800;
   /* Override GLOBAL weight for the buttons, font-size handled in MQs */
+  font-size: 1.25rem;
+  /*default padding for most settings, good width and height */
+  padding: .25rem .5rem;
+  text-align: center;
   text-decoration: none;
   text-shadow: 0px 0px 0px #99edc5;
   /* Invisible text-shadow makes the transition sexier. */
-  /* Provide Soap Bar text */
-  color: rgba(0, 0, 0, 0.4);
   transition: all .25s; }
-  .navItem a:hover {
+  @media (max-width: 500px) {
+    .navItem a {
+      display: block;
+      margin: 0 .5rem;
+      padding-top: .375rem;
+      padding-bottom: .375rem; } }
+  .navItem a:hover, .navItem a:active {
     /* Define the hover state: raised text and a slightly lighter bg */
     color: rgba(0, 0, 0, 0.6);
     text-shadow: 1px 2px 1px #89d5b1;
@@ -484,14 +520,14 @@ footer {
   @media (min-width: 599px) {
     .navItem a {
       font-size: .9rem;
-      padding: .3rem .2rem; } }
+      padding: .5rem .3rem; } }
   @media (min-width: 798px) {
     .navItem a {
       font-size: 1.25rem;
-      padding: 0 .4rem;
+      padding: .3rem .4rem;
       margin-top: 1rem;
       margin-bottom: 1rem; } }
-  @media (min-width: 1250px) {
+  @media (min-width: 1000px) {
     .navItem a {
       font-size: 1.25rem;
       padding: 0.2rem 1rem; } }
@@ -499,112 +535,371 @@ footer {
     .navItem a {
       padding: .125rem 2rem; } }
 
-main {
-  padding: 1rem;
-  padding-top: 0;
+#menuButton {
+  font-size: 1.25rem;
+  z-index: 200;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.3);
   position: absolute;
-  left: .25rem;
-  right: .25rem;
-  bottom: 2.5rem;
-  top: 16rem;
-  /* Widescreen */
+  bottom: 3.9rem;
+  left: 50%;
+  margin-left: -1.5rem;
+  width: 3rem;
+  text-align: center;
+  height: 2rem;
+  padding-top: .25rem;
+  background-color: #99edc5;
+  border-radius: 25% 25% 0% 0%;
+  border-top: 2px solid #7abd9d;
+  /*	border-bottom: 2px solid mix($option, black, 20%); */
+  text-shadow: 0 0 0 #89d5b1; }
+  #menuButton:hover, #menuButton:active {
+    /* Define the hover state: raised text and a slightly lighter bg */
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 2px 1px #89d5b1;
+    background-color: #adf0d0; }
+  @media (min-width: 500px) {
+    #menuButton {
+      display: none; } }
+
+main {
+  position: absolute;
+  padding: 0;
+  top: 6rem;
+  bottom: 6rem;
+  left: 0;
+  right: 0;
   overflow-y: auto;
   overflow-x: hidden; }
+  @media (min-width: 500px) {
+    main {
+      padding: 1rem;
+      padding-top: 0;
+      left: .25rem;
+      right: .25rem;
+      bottom: 2.5rem;
+      top: 18rem; } }
+  @media (min-width: 1000px) {
+    main {
+      top: 16rem; } }
+  main.opened {
+    top: 6.25rem; }
   main.locked {
     overflow: hidden; }
     main.locked section {
-      height: 110%;
-      max-height: 110%; }
+      height: 100%;
+      max-height: 100%; }
+      @media (min-width: 500px) {
+        main.locked section {
+          margin-bottom: 2rem;
+          height: 110%;
+          max-height: 110%; } }
     main.locked .rightBlock {
       overflow: auto;
-      height: 95%; }
+      max-height: 90%; }
 
 section {
   position: relative;
   background-color: #99edc5;
   padding: 0rem;
-  margin-top: 1rem;
-  height: 110%; }
+  margin-top: 3.25rem;
+  height: 95%; }
+  @media (min-width: 500px) {
+    section {
+      height: 100%;
+      margin-top: 1rem; } }
   section header {
     top: 0;
     left: 0;
     height: 100%;
-    width: 18rem;
+    width: 9.5rem;
     float: left;
     position: absolute;
     text-align: center; }
+    @media (min-width: 500px) {
+      section header {
+        width: 18rem; } }
     section header h1 {
-      margin-bottom: .25rem; }
+      font-size: 1.5rem; }
     section header h2 {
-      margin-top: .25rem;
-      font-size: 2rem; }
+      margin-top: .25rem; }
 
 .leftBlock {
   position: absolute;
   text-align: center;
   top: 50%;
   left: 50%;
-  width: 14rem;
-  margin-left: -7rem; }
+  width: 9rem;
+  margin-left: -4.5rem; }
+  @media (min-width: 500px) {
+    .leftBlock {
+      width: 12rem;
+      margin-left: -7rem; } }
   .leftBlock h1, .leftBlock h2 {
     font-weight: 800;
+    font-size: 1rem;
     color: rgba(0, 0, 0, 0.3); }
+  @media (min-width: 500px) {
+    .leftBlock h1 {
+      font-size: 2rem; } }
+  @media (min-width: 500px) {
+    .leftBlock h2 {
+      font-size: 1.5rem; } }
   .leftBlock .intro {
     text-align: justify; }
 
 .rightBlock {
-  margin-left: 18.5rem; }
+  position: absolute;
+  top: 50%;
+  left: 9.25rem;
+  right: .25rem;
+  padding: 0 1rem; }
+  @media (min-width: 500px) {
+    .rightBlock {
+      left: 18.5rem;
+      right: 1rem; } }
+  .rightBlock h3 {
+    margin: 0;
+    padding: 0; }
 
 section.welcome {
   background-color: transparent; }
   section.welcome .message {
     color: white;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.5rem;
     position: absolute;
     text-align: center;
     left: 0;
     right: 0;
-    bottom: 3rem; }
+    bottom: 2rem; }
+    @media (min-width: 798px) {
+      section.welcome .message {
+        font-size: 2rem; } }
+    @media (min-width: 500px) {
+      section.welcome .message {
+        bottom: 6rem; } }
+    @media (min-width: 1250px) {
+      section.welcome .message {
+        bottom: 4rem; } }
+  section.welcome ul {
+    padding-left: 0;
+    margin: .25rem 0 2rem 0; }
+    @media (min-width: 500px) {
+      section.welcome ul {
+        margin-bottom: 0; } }
+  section.welcome li.navItem {
+    margin-top: 2rem; }
+    @media (min-width: 500px) {
+      section.welcome li.navItem {
+        margin-top: 0; } }
+    section.welcome li.navItem a {
+      display: inline; }
+
+section dt {
+  font-weight: 600;
+  margin-top: 1rem; }
+  section dt:first-of-type {
+    margin-top: 0rem; }
+  section dt:after {
+    content: ":"; }
+
+.form {
+  background-color: #d6f7e7; }
+  @media (min-width: 500px) {
+    .form {
+      border: 10px solid #99edc5;
+      border-top: none;
+      border-bottom: none; } }
 
 .landing {
-  height: 13rem;
+  /* Key Definition */
+  /* Handheld-out */
+  transition: all .3s;
+  height: 7rem;
   width: 100%;
   position: relative;
   text-align: center;
   padding: 1rem 2rem .5rem 2rem;
-  overflow: hidden; }
+  overflow: hidden;
+  /* Adjust for non-palm devices */ }
+  @media (min-width: 500px) {
+    .landing {
+      height: 14rem; } }
+  @media (min-width: 1000px) {
+    .landing {
+      height: 13rem; } }
   .landing h1, .landing h2, .landing img {
     display: block;
-    color: white;
     margin: .5rem auto;
     padding: 0; }
-  @media (max-width: 1250px) {
-    .landing h2 {
-      font-size: 1.1rem;
-      max-width: 75%; } }
-  @media (max-width: 798px) {
-    .landing h2 {
-      font-size: 1rem;
-      max-width: 60%; } }
+  .landing h1, .landing h2 {
+    color: white; }
+  .landing h1 {
+    font-size: 1.1rem;
+    text-align: left;
+    margin-left: 1.5rem;
+    margin-top: -.25rem; }
+    @media (min-width: 500px) {
+      .landing h1 {
+        text-align: center;
+        margin-left: auto;
+        margin-top: 1rem;
+        font-size: 1.5rem; } }
+  .landing h2 {
+    margin-left: -1.25rem;
+    margin-top: -.25rem;
+    text-indent: 2.75rem;
+    font-size: .9rem;
+    line-height: 1.25rem;
+    text-align: left; }
+    @media (min-width: 500px) {
+      .landing h2 {
+        text-align: center;
+        margin-left: auto;
+        font-size: 1rem;
+        margin-top: -.25rem;
+        max-width: 60%; } }
+    @media (min-width: 1000px) {
+      .landing h2 {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        max-width: 90%; } }
+  .landing img {
+    display: none; }
+    @media (min-width: 500px) {
+      .landing img {
+        display: block; } }
   .landing:before {
     /*Globe watermark */
-    content: "Globe";
-    font-size: 24rem;
+    /*This is a SASS Workaround as @extends fail within media queries currently */
+    content: url("/resources/images/logo-32.png");
     position: absolute;
-    color: rbga(255, 255, 255, 0.1);
-    top: -3rem;
-    left: -6rem;
-    text-shadow: 3px 3px 12px #99edc5; }
-    @media (max-width: 1250px) {
+    top: .5rem;
+    left: .5rem; }
+    @media (min-width: 500px) {
       .landing:before {
-        font-size: 22rem;
-        left: -8rem; } }
-    @media (max-width: 1250px) {
+        content: "Globe";
+        font-size: 20rem;
+        top: -2rem;
+        left: -11rem;
+        text-shadow: 3px 3px 12px #99edc5; } }
+    @media (min-width: 1500px) {
+      .landing:before {
+        font-size: 24rem;
+        left: -8rem;
+        top: -3rem; } }
+    @media (min-width: 1000px) {
       .landing:before {
         font-size: 20rem;
         top: -2rem;
         left: -11rem; } }
+
+/* Opened: The landing module in the expanded view. */
+.landing.opened {
+  height: 5rem; }
+  @media (min-width: 500px) {
+    .landing.opened {
+      height: 3rem;
+      padding: .25rem 1rem;
+      text-align: left; } }
+  .landing.opened .logo {
+    float: right;
+    margin-top: -.1rem; }
+    @media (min-width: 1000px) {
+      .landing.opened .logo {
+        margin-top: -.5rem; } }
+  .landing.opened h1 {
+    float: left;
+    margin-right: 1rem;
+    margin-left: .5rem; }
+    @media (min-width: 1000px) {
+      .landing.opened h1 {
+        margin-top: -.1rem; } }
+  .landing.opened h2 {
+    margin-top: .5rem;
+    padding-top: 0;
+    max-width: 80%;
+    font-size: .75rem; }
+  @media (min-width: 1000px) {
+    .landing.opened {
+      padding-top: 1.15rem; } }
+  .landing.opened:before {
+    content: ""; }
+
+.textWidget {
+  margin: 0;
+  margin-bottom: 1rem;
+  padding: 0;
+  border-radius: 3px;
+  border-top: 1px solid #a3eeca;
+  border-bottom: 1px solid #89d5b1;
+  background-color: #99edc5;
+  font-weight: 800;
+  text-align: center; }
+  .textWidget label {
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-size: 1.25rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.3); }
+    @media (min-width: 500px) {
+      .textWidget label {
+        font-size: 1.75rem; } }
+  .textWidget input {
+    width: 98%;
+    font-size: 1.25rem;
+    box-sizing: border-box;
+    padding: .25rem 1rem 0;
+    margin-bottom: .5rem; }
+    @media (min-width: 500px) {
+      .textWidget input {
+        font-size: 1.75rem; } }
+    .textWidget input:focus {
+      color: #a3eeca; }
+      .textWidget input:focus::-webkit-input-placeholder {
+        color: transparent; }
+      .textWidget input:focus::-moz-input-placeholder {
+        color: transparent; }
+      .textWidget input:focus:-moz-input-placeholder {
+        color: transparent; }
+      .textWidget input:focus:-ms-input-placeholder {
+        color: transparent; }
+      .textWidget input:focus::input-placeholder {
+        color: transparent; }
+
+.submitButton {
+  border-top: 1px solid #a3eeca;
+  border-bottom: 1px solid #89d5b1;
+  border-left: none;
+  border-right: none;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.1rem;
+  padding: 1rem;
+  background-color: #99edc5;
+  width: 99%;
+  text-align: center;
+  line-height: 2.2rem;
+  border-radius: .6rem;
+  text-decoration: none;
+  text-shadow: none;
+  backface-visibility: hidden;
+  appearance: none;
+  margin-bottom: 1rem; }
+  @media (min-width: 500px) {
+    .submitButton {
+      font-size: 1.5rem; } }
+  @media (min-width: 1000px) {
+    .submitButton {
+      padding: 2rem;
+      border-radius: .375rem;
+      padding: 1rem; } }
+
+.formFoot {
+  margin-bottom: 2rem;
+  text-align: center; }
 
 /* _appearances.scss, provides styling for classes. */
 .callout {

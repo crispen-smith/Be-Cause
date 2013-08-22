@@ -1,48 +1,123 @@
 .landing {
+	/* Key Definition */
+  /* Handheld-out */
+  transition: all .3s;
   
-  height: 13rem;
+  height: 7rem; 
   width: 100%;
   position: relative;
   text-align: center;
-
   padding: 1rem 2rem .5rem 2rem;
   overflow: hidden;
 
-   
+  /* Adjust for non-palm devices */
+  @include applyWiderThan($rook) {
+    height: 14rem; }
+  @include applyWiderThan($queen) {
+   height: 13rem;   }
+
+
   
   & h1, & h2, & img {
     display: block;
-    color: white;
     margin: .5rem auto; 
-    padding: 0;
-    }
+    padding: 0;     }
+
+   & h1, & h2 {
+     color: white; }
+ 
+   & h1 {
+    font-size: 1.1rem;
+    text-align: left;
+    margin-left: 1.5rem;
+    margin-top: -.25rem;
+	  @include applyWiderThan($rook) {
+	   text-align: center;
+	   margin-left: auto;
+	    margin-top: 1rem;
+	    font-size: 1.5rem; }}
     
-    & h2 {
-     @include applyNarrowerThan($king) {
-       font-size: 1.1rem; 
-       max-width: 75%   }
-       
-     @include applyNarrowerThan($bishop) {
-     	font-size: 1rem;
-      max-width: 60%; }}
-    
-  &:before { /*Globe watermark */
-  @extend %icon; 
-  content: "Globe";
-  font-size: 24rem;
-  position: absolute;
-  color: rbga(255,255,255,.1);
-  top: -3rem; 
-  left: -6rem;
-   @include textShadow($option, 3px, 3px, 12px);
+   & h2 {
+    margin-left: -1.25rem;
+    margin-top: -.25rem;
+    text-indent: 2.75rem;
+    font-size: .9rem;
+    line-height: 1.25rem;
+    text-align: left;
    
-   @include applyNarrowerThan($king) { 
-    font-size: 22rem;
-    left: -8rem;
-   }
-   @include applyNarrowerThan($king) {
-    font-size: 20rem;
-    top: -2rem;
-    left: -11rem; }}}
+    @include applyWiderThan($rook) {
+      text-align: center;
+      margin-left: auto;
+    	font-size: 1rem;
+    	margin-top: -.25rem;;
+     max-width: 60%; }
+     
+    @include applyWiderThan($queen) {
+     font-size: 1.1rem; 
+     margin-top: 1rem;
+      max-width: 90%   } }
+       
+   & img { 
+     display: none;
+     @include applyWiderThan($rook) {
+     display: block; } }
+
+  &:before { /*Globe watermark */
+  
+	  @extend  %icon;  /*This is a SASS Workaround as @extends fail within media queries currently */ 
+	  content: url("/resources/images/logo-32.png");
+	  position: absolute;
+	  top: .5rem;
+	  left: .5rem;
+	  
+    @include applyWiderThan($rook) {
+	    content: "Globe";
+	    font-size: 20rem;
+	    top: -2rem; 
+	    left: -11rem; 
+	    @include textShadow($option, 3px, 3px, 12px); }
+   
+    @include applyWiderThan($beekeeper) { 
+      font-size: 24rem;
+      left: -8rem;
+      top: -3rem; }
+    
+    @include applyWiderThan($queen) {
+      font-size: 20rem;
+      top: -2rem;
+      left: -11rem; }}}
   
 
+/* Opened: The landing module in the expanded view. */
+.landing.opened {
+  height: 5rem;
+  
+  @include applyWiderThan($rook) {
+    height: 3rem; 
+  padding: .25rem 1rem; 
+  text-align: left; }
+   
+  & .logo {
+	  float: right; 
+	  margin-top: -.1rem;
+	  @include applyWiderThan($queen) {
+	  margin-top: -.5rem;} }
+  
+  & h1 {
+	  float: left;
+	  margin-right: 1rem;
+	  margin-left: .5rem;
+	  @include applyWiderThan($queen) {
+	  margin-top: -.1rem; }}
+  
+  & h2 {
+	  margin-top: .5rem;
+	  padding-top: 0;
+	  max-width: 80%;
+	  font-size: .75rem; }
+
+  @include applyWiderThan($queen) {
+    padding-top: 1.15rem;   }
+  
+  &:before {
+    content:"";   }}

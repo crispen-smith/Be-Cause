@@ -1,49 +1,71 @@
 main {
-  padding: 1rem;
-  padding-top: 0;
-  
   position: absolute;
-  left: .25rem;
-  right: .25rem;
-  bottom: 2.5rem;
-  top: 16rem; /* Widescreen */
+  padding: 0;
+  top: 6rem;
+  bottom: 6rem;
+  left:  0;
+  right: 0;
+
+  
+  @include applyWiderThan($rook) {
+    padding: 1rem;
+    padding-top: 0;
+    left: .25rem;
+    right: .25rem;
+	  bottom: 2.5rem;
+	  top: 18rem; }
+
+  @include applyWiderThan($queen) {
+  top: 16rem;   }
+  
+  
+  
+  &.opened {
+    top: 6.25rem; }
   overflow-y: auto;
   overflow-x: hidden;
   &.locked {
-  overflow: hidden;
-  
-  & section {
-    height: 110%;
-    max-height: 110%; }
+    overflow: hidden;
+	  & section {
+	  height: 100%;
+	  max-height: 100%;
+	  @include applyWiderThan($rook) {
+	    margin-bottom: 2rem;
+	    height: 110%;
+	    max-height: 110%; } }
   & .rightBlock {
   overflow: auto;
-  height: 95%; }
-}
-  
-}
+  max-height: 90%; } } }
+
+
+
 
 section {
 	position: relative;
   background-color: $option;
   padding: 0rem;
-  margin-top: 1rem;
-  height: 110%;
+  margin-top: 3.25rem;
+  height: 95%;
+  @include applyWiderThan($rook) {
+  height: 100%;
+  margin-top: 1rem;  }
  
    & header {
    	top: 0;
    	left: 0;
     height: 100%;
-    width: 18rem;
+    width: 9.5rem; 
+    @include applyWiderThan($rook) {
+    width: 18rem; }
     float: left;
     position: absolute;
     text-align: center;
    & h1 {
-     margin-bottom: .25rem; }
+    font-size: 1.5rem;  }
      
    & h2 {
-   margin-top: .25rem;
-   font-size: 2rem; }
-
+   margin-top: .25rem; }
+   
   @extend %vertSeamAfter; }
   
 }
@@ -53,14 +75,25 @@ section {
   text-align: center;
   top: 50%;
   left: 50%;
-  width: 14rem;
-  margin-left: -7rem;
+  width: 9rem;
+  margin-left: -4.5rem;
+  
+  @include applyWiderThan($rook) {
+	  width: 12rem; 
+	  margin-left: -7rem; }
   
   & h1, & h2 {
   	@extend %titleFont;
     font-weight: 800;
+    font-size: 1rem;
     color: rgba(0,0,0, .3); }
-  
+
+  & h1 {
+    @include applyWiderThan($rook) {
+      font-size: 2rem; }}
+  & h2 {
+	  @include applyWiderThan($rook) {
+	    font-size: 1.5rem; }}
   
   & .intro {
    text-align: justify; }
@@ -68,7 +101,21 @@ section {
 }
 
 .rightBlock {
-  margin-left: 18.5rem;
+	position: absolute;
+	top: 50%;
+	left: 9.25rem;
+	right: .25rem;
+	@include applyWiderThan($rook) {
+	left: 18.5rem;
+	right: 1rem;
+	}
+  padding: 0 1rem;
+  
+  & h3 {
+  margin: 0;
+  padding: 0; }
+  
+  
 }
 
 
@@ -79,10 +126,49 @@ section.welcome {
   	color: white;
     @extend %titleFont;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    @include applyWiderThan($bishop) {
+      font-size: 2rem; }
     position: absolute;
   	text-align: center;
   	left: 0;
   	right: 0;
-  	bottom: 3rem; }
+  	bottom: 2rem; 
+  	@include applyWiderThan($rook) {
+  	bottom: 6rem; }
+  	
+  	@include applyWiderThan($king) {
+  	bottom: 4rem; }}
+  	
+  	& ul {
+    	padding-left: 0;
+    	margin: .25rem 0 2rem 0; 
+  	
+	  	@include applyWiderThan($rook) {
+	  	 margin-bottom: 0; }}
+	  	
+  	& li.navItem {
+	  	margin-top: 2rem;
+	  	@include applyWiderThan($rook) {
+	  	margin-top: 0; }
+  	
+  	& a {
+  	 display: inline; } }
 }
+
+section dt {
+	font-weight: 600;
+	margin-top: 1rem;
+	&:first-of-type {
+	margin-top: 0rem; }
+	&:after {
+	content: ":" }
+}
+
+.form {
+	background-color: mix($option, white, 40%);
+
+  @include applyWiderThan($rook) {
+		border: 10px solid $option;
+		border-top: none;
+		border-bottom: none; }}

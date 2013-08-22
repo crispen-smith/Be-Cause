@@ -13,7 +13,7 @@ html {
   font:  {
     size: 16px;   }
   
-  @include applyNarrowerThan($bishop) {
+  @include applyNarrowerThan($queen) {
     font: {
     size: 14px; }}
 }
@@ -24,7 +24,7 @@ body {
 }
 
 
-.navbar, .landing, main, footer {
+.navbar, .landing, main, footer, #menuButton {
   box-sizing: border-box;
 }
 
